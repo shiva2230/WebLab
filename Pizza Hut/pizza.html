@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hut</title>
+</head>
+
+<style>
+    /* 
+    #name,#address{
+        border-radius: 15px;
+    } */
+
+    h1 {
+        text-align: center;
+        color: white;
+
+    }
+
+    body {
+        height: auto;
+        width: auto;
+        /* background:url(""); */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    .btn {
+        background-color: #ce9000b5;
+        padding: 16px 32px;
+
+        margin: 0 auto;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-top: 8px;
+    }
+
+    footer {
+        width: 100vw;
+        height: 200px;
+        background-color: black;
+
+    }
+
+    header {
+        padding: 2%;
+        width: 80pw;
+        height: px;
+        /* background-color: rgba(255, 255, 184, 0.827); */
+
+    }
+
+    footer p {
+        color: aliceblue;
+        /* padding: 5%; */
+        padding-bottom: 15%;
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    div .fnameDiv {
+        /* padding-right: 36%; */
+    }
+
+    div .lnameDiv {
+        /* padding-right: 36%; */
+    }
+
+    .addressDiv {
+        margin-left: 35px;
+
+    }
+
+    .main-div {
+        border-radius: 15px;
+        height: 60%;
+        width: 35%;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        background-color: rgba(253, 124, 44, 0.871);
+        padding: 25px 32px;
+        margin: 5%;
+
+
+
+    }
+
+    .pizzaSize {
+        margin-left: 30 px;
+
+    }
+
+    .deliveryType {
+        margin-right: 70.5px;
+        margin-left: 45px;
+    }
+
+    marquee {
+        background-color: rgba(0, 0, 0, 0.497);
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: rgb(102, 212, 0);
+    }
+
+    .temp {
+        display: flex;
+        /* width: 100%; */
+        flex-direction: row;
+        justify-content: space-around;
+    }
+</style>
+
+<body background="pizza-pic cropped.jpg">
+    <header>
+        <h1>Pizza Hut</h1>
+    </header>
+    <!-- <div class="top-div">
+        
+    </div> -->
+
+
+    <marquee behavior="" direction="">Flash sale: 15% off on all orders</marquee>
+    <div class="main-div"><br><br>
+        <div class="temp">
+            <div class="fnameDiv">
+                <input type="text" id="fname" placeholder="First Name" onblur="containsNumbers()">
+            </div>
+            <div class="lnameDiv"><input type="text" id="lname" placeholder="Last Name" onblur="containsNumbers()"><br>
+                <br>
+            </div>
+        </div>
+        <div class="addressDiv" align="left">
+            <textarea name="address" id="address" cols="21" rows="8" placeholder="Address"></textarea>
+        </div><br>
+        <br>
+
+        <div class="deliveryType" align="center"><label for="delivery">Delivery type: </label>
+            <input type="radio" name="delType" value="home"> Home Delivery
+            <input type="radio" name="delType" value="takeAway"> Take Away<br><br>
+        </div>
+        <div class="pizzaSize">
+            Pizza Size:
+            <select name="Pizza Size" id="size">
+
+                <option value="small">small</option>
+                <option value="medium">medium</option>
+                <option value="large">large</option>
+            </select>
+        </div>
+        <br><br>
+        <div class="additionalDiv"> Additional toppings:
+            Pepper <input type="checkbox" id="pepper">
+            Chilli Sauce <input type="checkbox" id="chilliSauce">
+            Sweet Corn <input type="checkbox" id="sweetCorn">
+            <br>
+        </div>
+        <button id="btn" onclick="fillForm()">
+            Submit
+        </button>
+    </div>
+
+    <footer align="center">
+        <p> Order a delicious pizza on the go, anywhere, anytime. Pizza Hut is happy to assist you with your home
+            delivery.
+            Every time you order, you get a hot and fresh pizza delivered at your doorstep in less than thirty minutes.
+            *T&C Apply.
+            <br>Hurry up and place your order now!
+        </p>
+    </footer>
+    <script>
+        let fname = document.getElementById("fname")
+
+        function fillForm() {
+            if (fname.value == "" && lname.value == "") {
+                alert("Name field can't be empty !");
+            }
+            if (address.value == "") {
+                alert(
+                    "Address field can't be empty !")
+            }
+
+            else {
+                // window.location.href="C:\Users\rshiv\Documents\html\Pizza Hut\order.html";
+                window.location.href = "./order.html"
+            }
+            // window.location.href="https://www.geeksforgeeks.org/";
+            // window.location.href ="./order.html"
+
+        }
+
+        function containsNumbers() {
+            var query1 = document.getElementById('fname').value;
+            var query2 = document.getElementById('lname').value;
+            var isNumeric1 = query1.match(/^\d+$/);
+            var isNumeric2 = query2.match(/^\d+$/);
+
+            if (isNumeric1) {
+                alert("Invalid name");
+            }
+            else if (isNumeric2) {
+                alert("Invalid name");
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
